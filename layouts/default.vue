@@ -53,10 +53,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~bulma/sass/utilities/_all';
-
-$primary: #173144;
-
+$primary: #2a5231;
 @import '~bulma';
 @import '~buefy/src/scss/buefy';
 </style>
