@@ -2,7 +2,7 @@
   <div class="cards">
     <Card
       v-for="(card, index) in cards"
-      :key="card"
+      :key="card.id"
       :card="card"
       :is-current="index === 0"
       @cardAccepted="$emit('cardAccepted')"

@@ -16,6 +16,7 @@
 
 <script>
 import CardsStack from '~/components/CardsStack'
+import { ProductStatus } from '~/store/types'
 
 export default {
   components: {
@@ -24,8 +25,14 @@ export default {
 
   data() {
     return {
-      visibleCards: ['Chips', 'Chocolate', 'Milk'],
+      сards: ['Chips', 'Chocolate', 'Milk'],
     }
+  },
+
+  computed: {
+    visibleCards() {
+      return this.$store.state.products.list.filter((item) => item.status === ProductStatus.pending)
+    },
   },
 
   methods: {
