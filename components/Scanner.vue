@@ -1,9 +1,18 @@
 <template>
   <div class="scanner-container">
-    SCANNER, {{ name }}
-    <ul>
-      <li v-for="(item, index) in scanResults" :key="index">{{ item }}</li>
-    </ul>
+    <div class="panel has-background-white">
+      <p v-show="scanResults.length > 0" class="panel-heading">
+        Select correct barcode
+      </p>
+      <a
+        v-for="(item, index) in scanResults"
+        :key="index"
+        class="panel-block"
+        @click="handleItemClick(item)"
+      >
+        {{ item }}
+      </a>
+    </div>
     <div id="scanner-module"></div>
   </div>
 </template>
@@ -14,8 +23,8 @@ import Quagga from 'quagga'
 export default {
   data() {
     return {
-      name: 'Merey',
       scanResults: [],
+      results: [],
     }
   },
   mounted() {
@@ -27,7 +36,7 @@ export default {
           target: document.getElementById('scanner-module'),
         },
         decoder: {
-          readers: ['code_128_reader', 'ean_reader'],
+          readers: ['ean_reader'],
           debug: {
             drawBoundingBox: false,
             showFrequency: false,
@@ -43,7 +52,6 @@ export default {
           console.log(err)
           return
         }
-        console.log('Initialization finished. Ready to start')
         Quagga.start()
       }
     )
@@ -57,6 +65,12 @@ export default {
   },
   destroyed() {
     Quagga.stop()
+  },
+  methods: {
+    handleItemClick(item) {
+      console.log(item)
+      this.$emit('onCodeSelect', item)
+    },
   },
 }
 </script>
