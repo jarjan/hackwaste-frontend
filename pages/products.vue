@@ -1,21 +1,56 @@
 <template>
   <section class="section">
-    <div class="columns is-mobile">
-      <ul class="products-list">
-        <product v-for="product in products" :key="product.id" :product="product"></product>
-      </ul>
-    </div>
+    <b-table :data="products" :columns="columns"></b-table>
+    <!-- <product v-for="product in " :key="product.id" :product="product"></product> -->
   </section>
 </template>
 
 <script>
-import Product from '~/components/Product'
+// import Product from '~/components/Product'
 
 export default {
   name: 'ProductsPage',
 
-  components: {
-    Product,
+  // components: {
+  //   Product,
+  // },
+  data() {
+    return {
+      columns: [
+        {
+          field: 'id',
+          label: 'ID',
+          width: '40',
+          numeric: true,
+        },
+        {
+          field: 'ean',
+          label: 'Barcode EAN',
+        },
+        {
+          field: 'category',
+          label: 'Product category',
+        },
+        {
+          field: 'title',
+          label: 'Product name',
+        },
+        {
+          field: 'dueDate',
+          label: 'Due Date',
+          centered: true,
+        },
+        {
+          field: 'expirationDate',
+          label: 'Expiration Date',
+          centered: true,
+        },
+        {
+          field: 'status',
+          label: 'Status',
+        },
+      ],
+    }
   },
   computed: {
     products() {
