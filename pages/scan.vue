@@ -32,7 +32,7 @@
         </div>
       </div>
       <footer class="card-footer">
-        <button class="button is-primary is-fullwidth">
+        <button class="button is-primary is-fullwidth" @click="addProduct">
           Add product
         </button>
       </footer>
@@ -46,8 +46,10 @@
 </template>
 
 <script>
+import uuid from 'uuid/v4'
+import { ProductStatus } from '~/static/types'
 import Scanner from '~/components/Scanner'
-import { mockProducts } from '~/static/__mocks__'
+import calculateWasteDate, { formatMoment } from '~/static/utils/expirations'
 
 const api = 'https://hackwaste.herokuapp.com/check?ean='
 
@@ -75,14 +77,27 @@ export default {
       let info
       try {
         info = await this.$axios.$get(api + code)
-        console.log('info: ', info)
       } catch (error) {
         console.log(error)
       }
-      // this.info = info
+      this.info = info
       this.loading = false
-
-      this.info = mockProducts[0]
+    },
+    addProduct() {
+      const wasteDate = calculateWasteDate(this.info.category, this.date)
+      const bestBeforeDate = formatMoment(this.date)
+      const productId = uuid()
+      const newProduct = {
+        id: productId,
+        ean: this.info.ean,
+        category: this.info.category,
+        imgSrc: this.info.imgSrc,
+        title: this.info.title,
+        wasteDate,
+        bestBeforeDate,
+        status: ProductStatus.pending,
+      }
+      this.$store.commit('products/addProduct', newProduct)
     },
   },
 }

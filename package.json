@@ -29,6 +29,7 @@
     "nuxt-buefy": "^0.3.2",
     "quagga": "^0.12.1",
     "sass-loader": "^8.0.0",
+    "uuid": "^3.3.3",
     "vuex-persist": "^2.1.0"
   },
   "devDependencies": {

@@ -36,12 +36,12 @@ export default {
           label: 'Product name',
         },
         {
-          field: 'dueDate',
+          field: 'bestBeforeDate',
           label: 'Due Date',
           centered: true,
         },
         {
-          field: 'expirationDate',
+          field: 'wasteDate',
           label: 'Expiration Date',
           centered: true,
         },

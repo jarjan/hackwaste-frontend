@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-export const calculateWasteDate = (category, bestBeforeDate) => {
+const calculateWasteDate = (category, bestBeforeDate) => {
   let wasteDate
 
   switch (category) {
@@ -69,5 +69,9 @@ export const calculateWasteDate = (category, bestBeforeDate) => {
       break
   }
 
-  return wasteDate
+  return wasteDate.format('Do MMMM YYYY')
 }
+
+export const formatMoment = (date) => moment(date).format('Do MMMM YYYY')
+
+export default calculateWasteDate
