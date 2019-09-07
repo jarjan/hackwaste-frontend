@@ -82,7 +82,7 @@ export const mockProducts = [
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
   },
   {
-    id: 1,
+    id: 12,
     ean: '4260397980354',
     title: '9 Lucuma & cacao-nibs',
     dueDate: '7th September 2019', // date on product description
