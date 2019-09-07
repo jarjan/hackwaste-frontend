@@ -105,7 +105,7 @@ export default {
     hideCard() {
       setTimeout(() => {
         this.isShowing = false
-        this.$emit('hideCard', this.card.id)
+        this.$emit('hideCard', this.card)
       }, 300)
     },
 
@@ -124,20 +124,20 @@ export default {
             x: interactOutOfSightXCoordinate,
             rotation: interactMaxRotation,
           })
-          this.$emit(ACCEPT_CARD, this.card.id)
+          this.$emit(ACCEPT_CARD, this.card)
           break
         case REJECT_CARD:
           this.interactSetPosition({
             x: -interactOutOfSightXCoordinate,
             rotation: -interactMaxRotation,
           })
-          this.$emit(REJECT_CARD, this.card.id)
+          this.$emit(REJECT_CARD, this.card)
           break
         case SKIP_CARD:
           this.interactSetPosition({
             y: interactOutOfSightYCoordinate,
           })
-          this.$emit(SKIP_CARD, this.card.id)
+          this.$emit(SKIP_CARD, this.card)
           break
       }
 

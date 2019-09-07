@@ -65,19 +65,19 @@ export default {
   methods: {
     handleCardAccepted(item) {
       // mark product consumed
-      console.log('handleCardAccepted: ', item)
+      const product = { ...item, status: ProductStatus.consumed }
+      this.$store.commit('products/updateProduct', product)
     },
     handleCardRejected(item) {
       // mark product wasted
-      console.log('handleCardRejected: ', item)
+      const product = { ...item, status: ProductStatus.wasted }
+      this.$store.commit('products/updateProduct', product)
     },
     handleCardSkipped(item) {
       // Do nothing
-      console.log('handleCardSkipped: ', item)
     },
     removeCardFromDeck(item) {
       // Removing card from deck
-      console.log('removeCardFromDeck: ', item)
       this.removedCards = [...this.removedCards, item]
       this.visibleCards.shift()
     },

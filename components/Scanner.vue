@@ -68,7 +68,6 @@ export default {
   },
   methods: {
     handleItemClick(item) {
-      console.log(item)
       this.$emit('onCodeSelect', item)
     },
   },
