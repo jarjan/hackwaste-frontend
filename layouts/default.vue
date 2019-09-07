@@ -46,6 +46,11 @@ export default {
           icon: 'lightbulb',
           to: { name: 'inspire' },
         },
+        {
+          title: 'Scan',
+          icon: 'lightbulb',
+          to: { name: 'scan' },
+        },
       ],
     }
   },

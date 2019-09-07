@@ -20,22 +20,17 @@
 
       <card title="Lightweight" icon="arrange-bring-to-front">No other internal dependency</card>
     </div>
-    <div class="columns is-mobile">
-      <scanner></scanner>
-    </div>
   </section>
 </template>
 
 <script>
 import Card from '~/components/Card'
-import Scanner from '~/components/Scanner'
 
 export default {
   name: 'HomePage',
 
   components: {
     Card,
-    Scanner,
   },
 }
 </script>
