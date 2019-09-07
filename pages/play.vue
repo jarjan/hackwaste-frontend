@@ -36,13 +36,16 @@ export default {
   },
 
   methods: {
-    handleCardAccepted() {
-      console.log('handleCardAccepted')
+    handleCardAccepted(item) {
+      // mark product consumed
+      console.log('handleCardAccepted: ', item)
     },
-    handleCardRejected() {
-      console.log('handleCardRejected')
+    handleCardRejected(item) {
+      // mark product wasted
+      console.log('handleCardRejected: ', item)
     },
     handleCardSkipped() {
+      // Do nothing
       console.log('handleCardSkipped')
     },
     removeCardFromDeck() {

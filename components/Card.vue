@@ -124,20 +124,20 @@ export default {
             x: interactOutOfSightXCoordinate,
             rotation: interactMaxRotation,
           })
-          this.$emit(ACCEPT_CARD)
+          this.$emit(ACCEPT_CARD, this.card.id)
           break
         case REJECT_CARD:
           this.interactSetPosition({
             x: -interactOutOfSightXCoordinate,
             rotation: -interactMaxRotation,
           })
-          this.$emit(REJECT_CARD)
+          this.$emit(REJECT_CARD, this.card.id)
           break
         case SKIP_CARD:
           this.interactSetPosition({
             y: interactOutOfSightYCoordinate,
           })
-          this.$emit(SKIP_CARD)
+          this.$emit(SKIP_CARD, this.card.id)
           break
       }
 
