@@ -55,6 +55,9 @@ export default {
       }
     })
   },
+  destroyed() {
+    Quagga.stop()
+  },
 }
 </script>
 
