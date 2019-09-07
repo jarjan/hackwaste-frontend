@@ -1,19 +1,13 @@
 <template>
   <section class="section">
     <b-table :data="products" :columns="columns"></b-table>
-    <!-- <product v-for="product in " :key="product.id" :product="product"></product> -->
   </section>
 </template>
 
 <script>
-// import Product from '~/components/Product'
-
 export default {
   name: 'ProductsPage',
 
-  // components: {
-  //   Product,
-  // },
   data() {
     return {
       columns: [
