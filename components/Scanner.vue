@@ -11,10 +11,7 @@ const data = { name: 'Merey', scanResult: {} }
 
 Quagga.onDetected((data) => {
   console.log('data: ', data)
-})
-
-Quagga.onProcessed((data) => {
-  console.log('data proc: ', data)
+  console.log('result: ', data.codeResult.code)
 })
 
 export default {
@@ -30,7 +27,7 @@ export default {
           target: document.getElementById('scanner-module'),
         },
         decoder: {
-          readers: ['code_128_reader'],
+          readers: ['code_128_reader', 'ean_reader'],
         },
       },
       function(err) {
