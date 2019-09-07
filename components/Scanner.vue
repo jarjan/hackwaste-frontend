@@ -1,10 +1,10 @@
 <template>
   <div class="scanner-container">
     SCANNER, {{ name }}
-    <div id="scanner-module"></div>
     <ul>
       <li v-for="(item, index) in scanResults" :key="index">{{ item }}</li>
     </ul>
+    <div id="scanner-module"></div>
   </div>
 </template>
 
@@ -28,7 +28,15 @@ export default {
         },
         decoder: {
           readers: ['code_128_reader', 'ean_reader'],
+          debug: {
+            drawBoundingBox: false,
+            showFrequency: false,
+            drawScanline: false,
+            showPattern: false,
+          },
+          multiple: false,
         },
+        debug: false,
       },
       function(err) {
         if (err) {
@@ -40,10 +48,18 @@ export default {
       }
     )
     Quagga.onDetected((data) => {
-      console.log('data: ', data)
-      this.scanResults.push(data.codeResult.code)
-      console.log('result: ', data.codeResult.code)
+      const { code } = data.codeResult
+
+      if (!this.scanResults.includes(code)) {
+        this.scanResults.push(code)
+      }
     })
   },
 }
 </script>
+
+<style>
+.scanner-container canvas {
+  display: none;
+}
+</style>
