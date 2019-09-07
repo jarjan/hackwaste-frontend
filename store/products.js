@@ -1,7 +1,7 @@
-import { mockProduct } from './__mocks__'
+import { mockProducts } from './__mocks__'
 
 export const state = () => ({
-  list: [mockProduct],
+  list: mockProducts,
 })
 
 export const mutations = {

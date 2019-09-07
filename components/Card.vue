@@ -9,7 +9,7 @@
     class="card"
     :style="{ transform: transformString }"
   >
-    <h3 class="cardTitle">{{ card }}</h3>
+    <h3 class="cardTitle">{{ card.title }}</h3>
   </div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
 
   props: {
     card: {
-      type: String,
+      type: Object,
       required: true,
     },
     isCurrent: {
