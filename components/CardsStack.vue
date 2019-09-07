@@ -36,5 +36,6 @@ export default {
   display: flex;
   margin: 50px;
   width: 300px;
+  height: 300px;
 }
 </style>
