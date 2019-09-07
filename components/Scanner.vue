@@ -2,21 +2,28 @@
   <div class="scanner-container">
     SCANNER, {{ name }}
     <div id="scanner-module"></div>
+    <ul>
+      <li v-for="(item, index) in scanResuls" :key="index">{{ item }}</li>
+    </ul>
   </div>
 </template>
 
 <script>
 import Quagga from 'quagga'
-const data = { name: 'Merey', scanResult: {} }
-
-Quagga.onDetected((data) => {
-  console.log('data: ', data)
-  console.log('result: ', data.codeResult.code)
-})
 
 export default {
   data() {
-    return data
+    return {
+      name: 'Merey',
+      scanResults: [],
+    }
+  },
+  beforeMount() {
+    Quagga.onDetected((data) => {
+      console.log('data: ', data)
+      this.scanResults.push(data.codeResult.code)
+      console.log('result: ', data.codeResult.code)
+    })
   },
   mounted() {
     Quagga.init(
