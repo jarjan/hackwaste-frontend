@@ -4,8 +4,8 @@
       <strong>{{ product.title }}</strong>
     </h3>
     <p>Ean: {{ product.ean }}</p>
-    <p>Due: {{ product.dueDate }}</p>
-    <p>Estimated due: {{ product.expirationDate }}</p>
+    <p>Due: {{ product.bestBeforeDate }}</p>
+    <p>Estimated due: {{ product.wasteDate }}</p>
   </li>
 </template>
 
