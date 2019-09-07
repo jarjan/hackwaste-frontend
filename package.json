@@ -25,6 +25,7 @@
     "node-sass": "^4.12.0",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.2",
+    "quagga": "^0.12.1",
     "sass-loader": "^8.0.0"
   },
   "devDependencies": {
