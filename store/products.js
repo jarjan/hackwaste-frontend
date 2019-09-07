@@ -14,7 +14,6 @@ export const mutations = {
   },
   updateProduct(state, product) {
     const updatedProducts = state.list.filter((item) => item.id !== product.id)
-    updatedProducts.append(product)
-    state.list = updatedProducts
+    state.list = [...updatedProducts, product]
   },
 }
