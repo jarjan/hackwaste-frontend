@@ -1,5 +1,26 @@
 <template>
   <section class="section">
+    <div class="tutorial-section" @click="hideTutorial" v-if="isTutorialVisible">
+      <div class="columns is-vcentered tutorial-sides">
+        <div class="column">
+          <p class="has-text-centered">
+            <b-icon icon="gesture-swipe-left"></b-icon>
+            Swipe left if product has been wasted.
+          </p>
+        </div>
+        <div class="column">
+          <p class="has-text-centered">
+            <b-icon icon="gesture-swipe-right"></b-icon>
+            Swipe right if you consumed product.
+          </p>
+        </div>
+      </div>
+
+      <p class="has-text-centered">
+        <b-icon icon="gesture-swipe-down"></b-icon>
+        Swipe down to skip.
+      </p>
+    </div>
     <h2 class="title is-3 has-text-centered">
       Play a game!
       <b-icon icon="rocket" size="is-large" />
@@ -8,18 +29,8 @@
       Score:
       <ICountUp :delay="delay" :end-val="visiblePoints" :options="options" />
     </h1>
-    <h1></h1>
-    <p class="has-text-centered">
-      <b-icon icon="gesture-swipe-down"></b-icon>
-      Swipe down to skip.
-    </p>
+
     <div class="columns is-vcentered">
-      <div class="column">
-        <p class="has-text-centered">
-          <b-icon icon="gesture-swipe-right"></b-icon>
-          Swipe right if you consumed product.
-        </p>
-      </div>
       <div class="column">
         <div class="level">
           <div class="level-item">
@@ -32,12 +43,6 @@
             />
           </div>
         </div>
-      </div>
-      <div class="column">
-        <p class="has-text-centered">
-          <b-icon icon="gesture-swipe-right"></b-icon>
-          Swipe right if you consumed product.
-        </p>
       </div>
     </div>
   </section>
@@ -80,6 +85,9 @@ export default {
     points() {
       return this.$store.state.game.points
     },
+    isTutorialVisible() {
+      return this.$store.state.tutorial.visible
+    },
   },
 
   mounted() {
@@ -112,6 +120,9 @@ export default {
       // Removing card from deck
       this.removedCards = [...this.removedCards, item]
       this.visibleCards.shift()
+    },
+    hideTutorial() {
+      this.$store.commit('tutorial/hide')
     },
   },
 }

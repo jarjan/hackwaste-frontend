@@ -1,0 +1,22 @@
+.tutorial-section {
+  padding-top: 300px;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 1.5rem;
+  .tutorial-sides {
+    justify-content: space-between;
+    min-height: 0;
+  }
+  @media (min-width: 770px) {
+    padding-top: 200px;
+    .tutorial-sides {
+      min-height: 250px;
+    }
+  }
+}
