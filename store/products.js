@@ -6,7 +6,7 @@ export const state = () => ({
 
 export const mutations = {
   addProduct(state, product) {
-    state.list.push(product)
+    state.list = [product, ...state.list]
   },
   removeProduct(state, productId) {
     const newProducts = state.list.filter((product) => product.id !== productId)
