@@ -42,14 +42,14 @@ export default {
           to: { name: 'index' },
         },
         {
-          title: 'Inspire',
-          icon: 'lightbulb',
-          to: { name: 'inspire' },
+          title: 'Scan',
+          icon: 'barcode-scan',
+          to: { name: 'scan' },
         },
         {
-          title: 'Scan',
-          icon: 'lightbulb',
-          to: { name: 'scan' },
+          title: 'Play',
+          icon: 'cards-playing-outline',
+          to: { name: 'play' },
         },
       ],
     }
