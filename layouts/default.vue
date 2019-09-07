@@ -1,24 +1,15 @@
 <template>
   <div>
-    <nav class="navbar header has-shadow is-primary" role="navigation" aria-label="main navigation">
-      <div class="container">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/">HACK WASTE</a>
-          <div class="navbar-burger">
-            <span />
-            <span />
-            <span />
-          </div>
-        </div>
-        <div class="navbar-menu">
-          <div class="navbar-start">
-            <nuxt-link v-for="(item, key) of items" :key="key" :to="item.to" class="navbar-item">
-              {{ item.title }}
-            </nuxt-link>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <b-navbar wrapper-class="container" type="is-primary">
+      <template slot="brand">
+        <b-navbar-item tag="nuxt-link" to="/">HACK WASTE</b-navbar-item>
+      </template>
+      <template slot="start">
+        <b-navbar-item v-for="(item, key) of items" :key="key" tag="nuxt-link" :to="item.to">
+          {{ item.title }}
+        </b-navbar-item>
+      </template>
+    </b-navbar>
     <section class="main-content columns">
       <div class="container column">
         <nuxt />

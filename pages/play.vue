@@ -1,16 +1,40 @@
 <template>
   <section class="section">
-    <h2 class="title is-3 has-text-grey">
+    <h2 class="title is-3 has-text-centered">
       Play a game!
-      <b-icon icon="rocket" size="is-large" />"
+      <b-icon icon="rocket" size="is-large" />
     </h2>
-    <CardsStack
-      :cards="visibleCards"
-      @cardAccepted="handleCardAccepted"
-      @cardRejected="handleCardRejected"
-      @cardSkipped="handleCardSkipped"
-      @hideCard="removeCardFromDeck"
-    />
+    <p class="has-text-centered">
+      <b-icon icon="gesture-swipe-down"></b-icon>
+      Swipe down to skip.
+    </p>
+    <div class="columns is-vcentered">
+      <div class="column">
+        <p class="has-text-centered">
+          <b-icon icon="gesture-swipe-right"></b-icon>
+          Swipe right if you consumed product.
+        </p>
+      </div>
+      <div class="column">
+        <div class="level">
+          <div class="level-item">
+            <CardsStack
+              :cards="visibleCards"
+              @cardAccepted="handleCardAccepted"
+              @cardRejected="handleCardRejected"
+              @cardSkipped="handleCardSkipped"
+              @hideCard="removeCardFromDeck"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <p class="has-text-centered">
+          <b-icon icon="gesture-swipe-right"></b-icon>
+          Swipe right if you consumed product.
+        </p>
+      </div>
+    </div>
   </section>
 </template>
 
