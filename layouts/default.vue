@@ -51,6 +51,11 @@ export default {
           icon: 'cards-playing-outline',
           to: { name: 'play' },
         },
+        {
+          title: 'Products',
+          icon: 'cards-playing-outline',
+          to: { name: 'products' },
+        },
       ],
     }
   },
