@@ -26,6 +26,10 @@
             </b-field>
           </div>
         </div>
+        <div>
+          {{ info.name }}
+          <b-loading :is-full-page="false" :active.sync="loading"></b-loading>
+        </div>
       </div>
       <footer class="card-footer">
         <button class="button is-primary is-fullwidth">
@@ -44,6 +48,8 @@
 <script>
 import Scanner from '~/components/Scanner'
 
+const api = 'https://hackwaste.herokuapp.com/check?ean='
+
 export default {
   name: 'ScanPage',
 
@@ -56,12 +62,18 @@ export default {
       showScanner: false,
       code: '',
       date: new Date(),
+      info: {},
+      loading: false,
     }
   },
   methods: {
-    handleSelectCode(code) {
+    async handleSelectCode(code) {
       this.code = code
       this.showScanner = false
+      this.loading = true
+      const info = await this.$axios.$get(api + code)
+      this.info = info
+      this.loading = false
     },
   },
 }
