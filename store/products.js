@@ -1,4 +1,4 @@
-import { mockProducts } from './__mocks__'
+import { mockProducts } from '../static/__mocks__'
 
 export const state = () => ({
   list: mockProducts,

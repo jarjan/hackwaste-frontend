@@ -82,7 +82,7 @@ export const mockProducts = [
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
   },
   {
-    id: 12,
+    id: 9,
     ean: '4260397980354',
     title: '9 Lucuma & cacao-nibs',
     dueDate: '7th September 2019', // date on product description
@@ -92,7 +92,7 @@ export const mockProducts = [
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
   },
   {
-    id: 9,
+    id: 10,
     ean: '4260397980354',
     title: '10 Lucuma & cacao-nibs',
     dueDate: '7th September 2019', // date on product description
@@ -102,7 +102,7 @@ export const mockProducts = [
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
   },
   {
-    id: 10,
+    id: 11,
     ean: '4260397980354',
     title: '11 Lucuma & cacao-nibs',
     dueDate: '7th September 2019', // date on product description
@@ -112,7 +112,7 @@ export const mockProducts = [
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
   },
   {
-    id: 11,
+    id: 12,
     ean: '4260397980354',
     title: '12 Lucuma & cacao-nibs',
     dueDate: '7th September 2019', // date on product description

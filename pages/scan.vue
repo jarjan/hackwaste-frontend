@@ -47,6 +47,7 @@
 
 <script>
 import Scanner from '~/components/Scanner'
+import { mockProducts } from '~/static/__mocks__'
 
 const api = 'https://hackwaste.herokuapp.com/check?ean='
 
@@ -61,7 +62,7 @@ export default {
     return {
       showScanner: false,
       code: '',
-      date: new Date(),
+      date: new Date(Date.now() + 43800 * 60 * 1000),
       info: {},
       loading: false,
     }
@@ -71,9 +72,17 @@ export default {
       this.code = code
       this.showScanner = false
       this.loading = true
-      const info = await this.$axios.$get(api + code)
-      this.info = info
+      let info
+      try {
+        info = await this.$axios.$get(api + code)
+        console.log('info: ', info)
+      } catch (error) {
+        console.log(error)
+      }
+      // this.info = info
       this.loading = false
+
+      this.info = mockProducts[0]
     },
   },
 }

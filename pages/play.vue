@@ -16,7 +16,7 @@
 
 <script>
 import CardsStack from '~/components/CardsStack'
-import { ProductStatus } from '~/store/types'
+import { ProductStatus } from '~/static/types'
 
 export default {
   components: {
