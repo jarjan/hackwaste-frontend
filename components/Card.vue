@@ -105,7 +105,7 @@ export default {
     hideCard() {
       setTimeout(() => {
         this.isShowing = false
-        this.$emit('hideCard', this.card)
+        this.$emit('hideCard', this.card.id)
       }, 300)
     },
 

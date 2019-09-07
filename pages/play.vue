@@ -50,12 +50,15 @@ export default {
   data() {
     return {
       сards: ['Chips', 'Chocolate', 'Milk'],
+      removedCards: [],
     }
   },
 
   computed: {
     visibleCards() {
-      return this.$store.state.products.list.filter((item) => item.status === ProductStatus.pending)
+      return this.$store.state.products.list.filter(
+        (item) => item.status === ProductStatus.pending && !this.removedCards.includes(item.id)
+      )
     },
   },
 
@@ -68,11 +71,14 @@ export default {
       // mark product wasted
       console.log('handleCardRejected: ', item)
     },
-    handleCardSkipped() {
+    handleCardSkipped(item) {
       // Do nothing
-      console.log('handleCardSkipped')
+      console.log('handleCardSkipped: ', item)
     },
-    removeCardFromDeck() {
+    removeCardFromDeck(item) {
+      // Removing card from deck
+      console.log('removeCardFromDeck: ', item)
+      this.removedCards = [...this.removedCards, item]
       this.visibleCards.shift()
     },
   },

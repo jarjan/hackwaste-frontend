@@ -5,10 +5,10 @@
       :key="card.id"
       :card="card"
       :is-current="index === 0"
-      @cardAccepted="$emit('cardAccepted')"
-      @cardRejected="$emit('cardRejected')"
-      @cardSkipped="$emit('cardSkipped')"
-      @hideCard="$emit('hideCard')"
+      @cardAccepted="(event) => $emit('cardAccepted', event)"
+      @cardRejected="(event) => $emit('cardRejected', event)"
+      @cardSkipped="(event) => $emit('cardSkipped', event)"
+      @hideCard="(event) => $emit('hideCard', event)"
     />
   </div>
 </template>
