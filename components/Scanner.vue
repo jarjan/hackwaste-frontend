@@ -3,7 +3,7 @@
     SCANNER, {{ name }}
     <div id="scanner-module"></div>
     <ul>
-      <li v-for="(item, index) in scanResuls" :key="index">{{ item }}</li>
+      <li v-for="(item, index) in scanResults" :key="index">{{ item }}</li>
     </ul>
   </div>
 </template>
@@ -17,13 +17,6 @@ export default {
       name: 'Merey',
       scanResults: [],
     }
-  },
-  beforeMount() {
-    Quagga.onDetected((data) => {
-      console.log('data: ', data)
-      this.scanResults.push(data.codeResult.code)
-      console.log('result: ', data.codeResult.code)
-    })
   },
   mounted() {
     Quagga.init(
@@ -46,6 +39,11 @@ export default {
         Quagga.start()
       }
     )
+    Quagga.onDetected((data) => {
+      console.log('data: ', data)
+      this.scanResults.push(data.codeResult.code)
+      console.log('result: ', data.codeResult.code)
+    })
   },
 }
 </script>
