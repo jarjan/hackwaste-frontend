@@ -1,6 +1,10 @@
 <template>
   <section class="section">
     <div class="tutorial-section" @click="hideTutorial" v-if="isTutorialVisible">
+      <h2 class="title is-3 has-text-centered">
+        Play a game!
+        <b-icon icon="rocket" size="is-large" />
+      </h2>
       <div class="columns is-vcentered tutorial-sides">
         <div class="column">
           <p class="has-text-centered">
@@ -21,15 +25,11 @@
         Swipe down to skip.
       </p>
     </div>
-    <h2 class="title is-3 has-text-centered">
-      Play a game!
-      <b-icon icon="rocket" size="is-large" />
-    </h2>
+
     <h1 class="title is-1 has-text-centered">
       Score:
       <ICountUp :delay="delay" :end-val="visiblePoints" :options="options" />
     </h1>
-
     <div class="columns is-vcentered">
       <div class="column">
         <div class="level">
