@@ -1,6 +1,6 @@
 # hackwaste-frontend
 
-> Israpp
+> IsrApp
 
 Application developed on [`LOVE FOOD HACK WASTE` Hackathon](https://www.dvfoodhack.com/).
 

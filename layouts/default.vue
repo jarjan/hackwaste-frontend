@@ -2,7 +2,7 @@
   <div>
     <b-navbar wrapper-class="container" type="is-primary">
       <template slot="brand">
-        <b-navbar-item tag="nuxt-link" to="/">Israpp</b-navbar-item>
+        <b-navbar-item tag="nuxt-link" to="/">IsrApp</b-navbar-item>
       </template>
       <template slot="start">
         <b-navbar-item v-for="(item, key) of items" :key="key" tag="nuxt-link" :to="item.to">
