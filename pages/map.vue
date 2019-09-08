@@ -13,9 +13,9 @@
           <l-tile-layer :url="url" :attribution="attribution" />
           <l-marker v-for="marker in markers" :key="marker.name" :lat-lng="marker.location">
             <l-tooltip :options="{ permanent: true, interactive: true }">
-              <div>
+              <a :href="marker.link" target="_blank">
                 {{ marker.name }}
-              </div>
+              </a>
             </l-tooltip>
           </l-marker>
         </l-map>
