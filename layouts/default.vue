@@ -29,6 +29,11 @@ export default {
           to: { name: 'products' },
         },
         {
+          title: 'Chart',
+          icon: 'cards-playing-outline',
+          to: { name: 'chart' },
+        },
+        {
           title: 'Scan',
           icon: 'barcode-scan',
           to: { name: 'scan' },
@@ -39,9 +44,9 @@ export default {
           to: { name: 'play' },
         },
         {
-          title: 'Chart',
+          title: 'Map',
           icon: 'cards-playing-outline',
-          to: { name: 'chart' },
+          to: { name: 'map' },
         },
       ],
     }
