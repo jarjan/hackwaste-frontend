@@ -1,6 +1,6 @@
 <template>
   <section class="section">
-    <div class="tutorial-section" @click="hideTutorial" v-if="isTutorialVisible">
+    <div v-if="isTutorialVisible" class="tutorial-section" @click="hideTutorial">
       <h2 class="title is-3 has-text-centered">
         Play a game!
         <b-icon icon="rocket" size="is-large" />
@@ -26,10 +26,11 @@
       </p>
     </div>
 
-    <h1 class="title is-1 has-text-centered">
+    <h1 class="score is-1 has-text-centered">
       Score:
       <ICountUp :delay="delay" :end-val="visiblePoints" :options="options" />
     </h1>
+    <p class="score-phrase has-text-centered">{{ phrase }}</p>
     <div class="columns is-vcentered">
       <div class="column">
         <div class="level">
@@ -52,6 +53,7 @@
 import ICountUp from 'vue-countup-v2'
 import CardsStack from '~/components/CardsStack'
 import { ProductStatus } from '~/static/types'
+import { posPhrases, negPhrases } from '~/static/game'
 
 export default {
   components: {
@@ -73,6 +75,7 @@ export default {
         prefix: '',
         suffix: '',
       },
+      phrase: posPhrases[0],
     }
   },
 
@@ -91,7 +94,14 @@ export default {
   },
 
   mounted() {
-    this.visiblePoints = this.points
+    this.handlePointsChanged()
+  },
+
+  watch: {
+    '$store.state.game.points'(v) {
+      console.log('v: ', v)
+      this.handlePointsChanged()
+    },
   },
 
   methods: {
@@ -102,7 +112,6 @@ export default {
       if (product.category) points = 1500
       this.$store.commit('game/increment', points)
       this.$store.commit('products/updateProduct', product)
-      this.visiblePoints = this.points
     },
     handleCardRejected(item) {
       // mark product wasted
@@ -111,7 +120,6 @@ export default {
       if (product.category) points = 1500
       this.$store.commit('game/decrement', points)
       this.$store.commit('products/updateProduct', product)
-      this.visiblePoints = this.points
     },
     handleCardSkipped(item) {
       // Do nothing
@@ -123,6 +131,33 @@ export default {
     },
     hideTutorial() {
       this.$store.commit('tutorial/hide')
+    },
+    getPhrase() {
+      let phrase = this.phrase
+      let prevKey = 0
+      let pointsNum, Phrases
+      if (this.points >= 0) {
+        Phrases = posPhrases
+        pointsNum = this.points
+      } else {
+        Phrases = negPhrases
+        pointsNum = this.points * -1
+      }
+
+      console.log('Phrases: ', Phrases)
+      console.log('Points: ', pointsNum)
+      for (const key in Phrases) {
+        if (pointsNum < parseInt(key)) {
+          phrase = Phrases[prevKey]
+          break
+        }
+        prevKey = key
+      }
+      this.phrase = phrase
+    },
+    handlePointsChanged() {
+      this.visiblePoints = this.points
+      this.getPhrase()
     },
   },
 }

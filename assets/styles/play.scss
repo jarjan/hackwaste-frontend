@@ -1,5 +1,5 @@
 .tutorial-section {
-  padding-top: 300px;
+  padding-top: 250px;
   z-index: 10;
   position: fixed;
   top: 0;
@@ -11,15 +11,24 @@
   font-size: 1.5rem;
   .title {
     color: white;
+    margin-bottom: 50px;
   }
   .tutorial-sides {
     justify-content: space-between;
     min-height: 0;
   }
   @media (min-width: 770px) {
-    padding-top: 200px;
+    padding-top: 250px;
+    .title {
+      margin-bottom: 10px;
+    }
     .tutorial-sides {
-      min-height: 250px;
+      min-height: 200px;
     }
   }
+}
+.score {
+  margin-bottom: 10px;
+  font-size: 3rem;
+  line-height: 3rem;
 }
