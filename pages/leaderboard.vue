@@ -1,6 +1,14 @@
 <template>
-  <section class="section">
-    <b-table :data="leaders" :columns="columns"></b-table>
+  <section class="container section">
+    <b-table default-sort="leaders.score">
+      <b-table-row v-for="leader in leaders" :key="leader.id">
+        <b-table-column field="imgSrc" label="">
+          <img :src="leader.imgSrc" />
+        </b-table-column>
+        <b-table-column field="name" label="Name">{{ leader.name }}</b-table-column>
+        <b-table-column sortable field="score" label="Points">{{ leader.score }}</b-table-column>
+      </b-table-row>
+    </b-table>
   </section>
 </template>
 
@@ -11,7 +19,22 @@ export default {
   name: 'ProductsPage',
 
   data() {
-    return {}
+    return {
+      columns: [
+        {
+          field: 'imgSrc',
+          label: '',
+        },
+        {
+          field: 'name',
+          label: 'Name',
+        },
+        {
+          field: 'score',
+          label: 'Points',
+        },
+      ],
+    }
   },
   computed: {
     leaders() {
@@ -26,6 +49,9 @@ export default {
       }
       return person
     },
+  },
+  mounted() {
+    console.log(this.leaders)
   },
 }
 </script>
