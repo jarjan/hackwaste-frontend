@@ -112,7 +112,7 @@ export default {
       const data = this.getDataForMain()
       const mainds = {
         label: 'Products overview',
-        backgroundColor: ['blue', 'red', 'green'],
+        backgroundColor: ['#8285a7', '#d94e47', '#08B745'],
         borderColor: 'white',
         data,
       }
@@ -128,10 +128,8 @@ export default {
       return colors
     },
     randomColor() {
-      const r = Math.floor(Math.random() * 255)
-      const g = Math.floor(Math.random() * 255)
-      const b = Math.floor(Math.random() * 255)
-      return 'rgb(' + r + ',' + g + ',' + b + ')'
+      // eslint-disable-next-line
+      return '#' + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6)
     },
     updateStatusChart(status) {
       const data = this.getDataForStatus(status)

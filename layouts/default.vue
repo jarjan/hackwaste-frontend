@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style lang="scss">
-$primary: #2a5231;
+$primary: #173144;
 @import '~bulma';
 @import '~buefy/src/scss/buefy';
 </style>
