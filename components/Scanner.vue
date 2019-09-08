@@ -36,7 +36,7 @@ export default {
           target: document.getElementById('scanner-module'),
         },
         decoder: {
-          readers: ['ean_reader'],
+          readers: ['code_128_reader', 'ean_reader', 'ean_8_reader'],
           debug: {
             drawBoundingBox: false,
             showFrequency: false,
