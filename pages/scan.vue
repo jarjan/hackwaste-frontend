@@ -96,6 +96,7 @@ export default {
         wasteDate,
         bestBeforeDate,
         status: ProductStatus.pending,
+        updatedAt: Date.now(),
       }
       this.$store.commit('products/addProduct', newProduct)
     },

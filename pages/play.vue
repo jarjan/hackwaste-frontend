@@ -93,10 +93,6 @@ export default {
     },
   },
 
-  mounted() {
-    this.handlePointsChanged()
-  },
-
   watch: {
     '$store.state.game.points'(v) {
       console.log('v: ', v)
@@ -104,10 +100,14 @@ export default {
     },
   },
 
+  mounted() {
+    this.handlePointsChanged()
+  },
+
   methods: {
     handleCardAccepted(item) {
       // mark product consumed
-      const product = { ...item, status: ProductStatus.consumed }
+      const product = { ...item, status: ProductStatus.consumed, updatedAt: Date.now() }
       let points = 1000
       if (product.category) points = 1500
       this.$store.commit('game/increment', points)
@@ -115,7 +115,7 @@ export default {
     },
     handleCardRejected(item) {
       // mark product wasted
-      const product = { ...item, status: ProductStatus.wasted }
+      const product = { ...item, status: ProductStatus.wasted, updatedAt: Date.now() }
       let points = 1000
       if (product.category) points = 1500
       this.$store.commit('game/decrement', points)

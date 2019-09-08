@@ -38,6 +38,11 @@ export default {
           icon: 'cards-playing-outline',
           to: { name: 'play' },
         },
+        {
+          title: 'Chart',
+          icon: 'cards-playing-outline',
+          to: { name: 'chart' },
+        },
       ],
     }
   },

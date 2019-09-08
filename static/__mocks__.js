@@ -6,7 +6,7 @@ export const mockProducts = [
     ean: '4260397980354',
     title: '1 Lucuma & cacao-nibs',
     bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Backwaren​​​',
+    category: 'Cerealien​​​​',
     wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
     status: ProductStatus.consumed,
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
@@ -16,7 +16,7 @@ export const mockProducts = [
     ean: '4260397980354',
     title: '2 Lucuma & cacao-nibs',
     bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Backwaren​​​',
+    category: 'Cerealien​​​​',
     wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
     status: ProductStatus.pending,
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
@@ -26,7 +26,7 @@ export const mockProducts = [
     ean: '4260397980354',
     title: '3 Lucuma & cacao-nibs',
     bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Backwaren​​​',
+    category: 'Grundnahrungsmittel​​​',
     wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
     status: ProductStatus.pending,
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
@@ -36,7 +36,7 @@ export const mockProducts = [
     ean: '4260397980354',
     title: '4 Lucuma & cacao-nibs',
     bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Backwaren​​​',
+    category: 'Teigwaren​​​​',
     wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
     status: ProductStatus.pending,
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
@@ -46,7 +46,7 @@ export const mockProducts = [
     ean: '4260397980354',
     title: '5 Lucuma & cacao-nibs',
     bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Backwaren​​​',
+    category: 'Teigwaren​​​​',
     wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
     status: ProductStatus.pending,
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
@@ -56,7 +56,7 @@ export const mockProducts = [
     ean: '4260397980354',
     title: '6 Lucuma & cacao-nibs',
     bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Backwaren​​​',
+    category: 'Teigwaren​​​​',
     wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
     status: ProductStatus.pending,
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
@@ -66,7 +66,7 @@ export const mockProducts = [
     ean: '4260397980354',
     title: '7 Lucuma & cacao-nibs',
     bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Backwaren​​​',
+    category: 'Suppen',
     wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
     status: ProductStatus.pending,
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
@@ -76,7 +76,7 @@ export const mockProducts = [
     ean: '4260397980354',
     title: '8 Lucuma & cacao-nibs',
     bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Backwaren​​​',
+    category: 'Suppen',
     wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
     status: ProductStatus.pending,
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
@@ -86,7 +86,7 @@ export const mockProducts = [
     ean: '4260397980354',
     title: '9 Lucuma & cacao-nibs',
     bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Backwaren​​​',
+    category: 'Suppen',
     wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
     status: ProductStatus.pending,
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
@@ -96,7 +96,7 @@ export const mockProducts = [
     ean: '4260397980354',
     title: '10 Lucuma & cacao-nibs',
     bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Backwaren​​​',
+    category: 'Suppen',
     wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
     status: ProductStatus.pending,
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
