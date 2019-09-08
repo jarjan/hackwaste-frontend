@@ -8,7 +8,7 @@
           label=""
           width="80"
         >
-          <img :src="props.row.imgSrc" class="image is-48x48" />
+          <img :src="props.row.imgSrc" class="image is-48x48 leader-avatar" />
         </b-table-column>
         <b-table-column field="name" label="Name" :class="{ chosen: props.row.id === 1000 }">{{
           props.row.name
