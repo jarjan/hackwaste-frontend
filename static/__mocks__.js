@@ -3,121 +3,64 @@ import { ProductStatus } from './types'
 export const mockProducts = [
   {
     id: 1,
-    ean: '4260397980354',
-    title: '1 Lucuma & cacao-nibs',
+    ean: '4260576870063',
+    title: 'Karacho Reis Kokos',
     bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Cerealien​​​​',
-    wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
-    status: ProductStatus.consumed,
-    imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
+    category: 'Getränke',
+    wasteDate: '16th November 2019', // date estimated by app, fe: bestBeforeDate+12days
+    status: ProductStatus.pending,
+    imgSrc: 'https://images-na.ssl-images-amazon.com/images/I/71qpbLpSuCL._SY445_.jpg',
   },
   {
     id: 2,
-    ean: '4260397980354',
-    title: '2 Lucuma & cacao-nibs',
-    bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Cerealien​​​​',
-    wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
+    ean: '0856991004905',
+    title: 'Nick´s Coconut Bar',
+    bestBeforeDate: '2th October 2019',
+    category: 'Süßwaren',
+    wasteDate: '16th September 2020',
     status: ProductStatus.pending,
-    imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
+    imgSrc:
+      'https://www.lloydsapotek.se/medias/00856991004905-lloyds-se-media-pearlx300?context=bWFzdGVyfHJvb3R8NjAwMjN8aW1hZ2UvanBlZ3xoMmUvaDkzLzk3MDU1MTMyODc3MTAuanBnfDZlZWM0MTViNmY3YWNmZjEwZDNmMGU3M2VjMjBjYWI3OGE5YjVkMjFjMzY1ZmIyOWQ0Nzg2MWNkZGMyYTZmN2Q',
   },
   {
     id: 3,
     ean: '4260397980354',
-    title: '3 Lucuma & cacao-nibs',
-    bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Grundnahrungsmittel​​​',
-    wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
+    title: 'Lucuma & Kakao-nibs',
+    bestBeforeDate: '30th April 2019',
+    category: 'Cerealien',
+    wasteDate: '30th September 2019',
     status: ProductStatus.pending,
-    imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
+    imgSrc: 'https://cdn.shopify.com/s/files/1/1927/4841/products/DSC_0014_512x.JPG?v=1563993896',
   },
   {
     id: 4,
-    ean: '4260397980354',
-    title: '4 Lucuma & cacao-nibs',
-    bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Teigwaren​​​​',
-    wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
+    ean: '4260376849009',
+    title: 'Lycka Cold Brew mit Reisdrink',
+    bestBeforeDate: '14th May 2019',
+    category: 'Getränke',
+    wasteDate: '14th June 2019',
     status: ProductStatus.pending,
-    imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
+    imgSrc:
+      'https://cdn.shopify.com/s/files/1/2206/1145/products/Lycka_Coldbrew_Renderings_Black_RGB_medium.png?v=1558435322',
   },
   {
     id: 5,
-    ean: '4260397980354',
-    title: '5 Lucuma & cacao-nibs',
-    bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Teigwaren​​​​',
-    wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
+    ean: '4260402484259',
+    title: 'Bio Super Choc Bar',
+    bestBeforeDate: '18th September 2019',
+    category: 'Powerfood',
+    wasteDate: '16th September 2020',
     status: ProductStatus.pending,
-    imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
+    imgSrc:
+      'https://cdn.shopify.com/s/files/1/1927/4841/products/super-choc-bar-kakaonib-lucuma-1600x1600px-onlineshop_x700.jpg?v=1563991013',
   },
   {
     id: 6,
     ean: '4260397980354',
-    title: '6 Lucuma & cacao-nibs',
-    bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Teigwaren​​​​',
-    wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
-    status: ProductStatus.pending,
-    imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
-  },
-  {
-    id: 7,
-    ean: '4260397980354',
-    title: '7 Lucuma & cacao-nibs',
-    bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Suppen',
-    wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
-    status: ProductStatus.pending,
-    imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
-  },
-  {
-    id: 8,
-    ean: '4260397980354',
-    title: '8 Lucuma & cacao-nibs',
-    bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Suppen',
-    wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
-    status: ProductStatus.pending,
-    imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
-  },
-  {
-    id: 9,
-    ean: '4260397980354',
-    title: '9 Lucuma & cacao-nibs',
-    bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Suppen',
-    wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
-    status: ProductStatus.pending,
-    imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
-  },
-  {
-    id: 10,
-    ean: '4260397980354',
-    title: '10 Lucuma & cacao-nibs',
-    bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Suppen',
-    wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
-    status: ProductStatus.pending,
-    imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
-  },
-  {
-    id: 11,
-    ean: '4260397980354',
-    title: '11 Lucuma & cacao-nibs',
-    bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Backwaren​​​',
-    wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
-    status: ProductStatus.pending,
-    imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
-  },
-  {
-    id: 12,
-    ean: '4260397980354',
-    title: '12 Lucuma & cacao-nibs',
-    bestBeforeDate: '7th September 2019', // date on product description
-    category: 'Backwaren​​​',
-    wasteDate: '16th September 2019', // date estimated by app, fe: bestBeforeDate+12days
+    title: 'Friendly Avocado',
+    bestBeforeDate: '7th September 2019',
+    category: 'Gemüße',
+    wasteDate: '16th September 2019',
     status: ProductStatus.pending,
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
   },
