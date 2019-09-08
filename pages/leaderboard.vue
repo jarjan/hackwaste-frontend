@@ -48,7 +48,8 @@ export default {
       }
     },
     updateLeaderboard(person) {
-      this.leaders = [...this.leaders, person]
+      const leaders = this.leaders.filter((leader) => leader.id !== person.id)
+      this.leaders = [...leaders, person]
     },
   },
 }
