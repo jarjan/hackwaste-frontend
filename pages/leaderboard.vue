@@ -1,13 +1,13 @@
 <template>
   <section class="container section">
-    <b-table default-sort="leaders.score">
-      <b-table-row v-for="leader in leaders" :key="leader.id">
-        <b-table-column field="imgSrc" label="">
-          <img :src="leader.imgSrc" />
+    <b-table :data="leaders" :default-sort="['score', 'desc']">
+      <template slot-scope="props">
+        <b-table-column field="imgSrc" label="" width="80">
+          <img :src="props.row.imgSrc" class="image is-48x48" />
         </b-table-column>
-        <b-table-column field="name" label="Name">{{ leader.name }}</b-table-column>
-        <b-table-column sortable field="score" label="Points">{{ leader.score }}</b-table-column>
-      </b-table-row>
+        <b-table-column field="name" label="Name">{{ props.row.name }}</b-table-column>
+        <b-table-column sortable field="score" label="Points">{{ props.row.score }}</b-table-column>
+      </template>
     </b-table>
   </section>
 </template>
@@ -17,25 +17,6 @@ import { mockLeaders } from '~/static/__mocks__'
 
 export default {
   name: 'ProductsPage',
-
-  data() {
-    return {
-      columns: [
-        {
-          field: 'imgSrc',
-          label: '',
-        },
-        {
-          field: 'name',
-          label: 'Name',
-        },
-        {
-          field: 'score',
-          label: 'Points',
-        },
-      ],
-    }
-  },
   computed: {
     leaders() {
       return mockLeaders

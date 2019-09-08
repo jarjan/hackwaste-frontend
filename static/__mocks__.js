@@ -144,9 +144,9 @@ export const mockLeaders = [
   },
   {
     id: 4,
-    name: 'Marcus',
+    name: 'Markus',
     score: Math.floor(Math.random() * 10000),
-    imgSrc: '/profiles/Marcus.jpg',
+    imgSrc: '/profiles/Markus.jpg',
   },
   {
     id: 5,
