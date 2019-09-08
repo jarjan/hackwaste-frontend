@@ -84,21 +84,27 @@ export default {
       this.loading = false
     },
     addProduct() {
-      const wasteDate = calculateWasteDate(this.info.category, this.date)
-      const bestBeforeDate = formatMoment(this.date)
-      const productId = uuid()
-      const newProduct = {
-        id: productId,
-        ean: this.info.ean,
-        category: this.info.category,
-        imgSrc: this.info.imgSrc,
-        title: this.info.title,
-        wasteDate,
-        bestBeforeDate,
-        status: ProductStatus.pending,
-        updatedAt: Date.now(),
+      this.loading = true
+      try {
+        const wasteDate = calculateWasteDate(this.info.category, this.date)
+        const bestBeforeDate = formatMoment(this.date)
+        const productId = uuid()
+        const newProduct = {
+          id: productId,
+          ean: this.info.ean,
+          category: this.info.category,
+          imgSrc: this.info.imgSrc,
+          title: this.info.title,
+          wasteDate,
+          bestBeforeDate,
+          status: ProductStatus.pending,
+          updatedAt: Date.now(),
+        }
+        this.$store.commit('products/addProduct', newProduct)
+      } catch (error) {
+        console.log(error)
       }
-      this.$store.commit('products/addProduct', newProduct)
+      this.loading = false
     },
   },
 }
