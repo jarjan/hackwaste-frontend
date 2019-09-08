@@ -1,6 +1,6 @@
-# hackwaste
+# hackwaste-frontend
 
-> Big Brother Hack Waste
+> Israpp
 
 Application developed on [`LOVE FOOD HACK WASTE` Hackathon](https://www.dvfoodhack.com/).
 
@@ -12,10 +12,6 @@ $ yarn install
 
 # serve with hot reload at localhost:3000
 $ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
 
 # generate static project
 $ yarn generate
