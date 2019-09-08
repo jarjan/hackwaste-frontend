@@ -1,32 +1,6 @@
 <template>
   <div>
-    <nuxt-link :to="{ name: 'scan' }" class="hero is-info is-bold">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            <b-icon icon="food-apple" size="is-large" />
-            Share a meal
-          </h1>
-          <h2 class="subtitle">
-            Share achievements
-          </h2>
-        </div>
-      </div>
-    </nuxt-link>
-    <nuxt-link :to="{ name: 'play' }" class="hero is-success is-bold">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            <b-icon icon="gift" size="is-large" />
-            Donation promise
-          </h1>
-          <h2 class="subtitle">
-            Consume your food consciously.
-          </h2>
-        </div>
-      </div>
-    </nuxt-link>
-    <nuxt-link :to="{ name: 'map' }" class="hero is-primary is-bold">
+    <div class="hero is-primary is-bold">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
@@ -34,12 +8,26 @@
             Origin info
           </h1>
           <h2 class="subtitle">
-            Find nearby charity and food-saving organizations.
+            Where does your food come from? Raising awareness also for regional food.
           </h2>
         </div>
       </div>
-    </nuxt-link>
-    <nuxt-link :to="{ name: 'leaderboard' }" class="hero is-danger is-bold">
+    </div>
+    <div class="hero is-success is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            <b-icon icon="gift" size="is-large" />
+            Donation promise
+          </h1>
+          <h2 class="subtitle">
+            Add a promise. Bind a donation. If your promise is not fulfilled, donate.
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero is-danger is-bold">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
@@ -47,16 +35,29 @@
             Recipe search
           </h1>
           <h2 class="subtitle">
-            Save the World together with friends!
+            Have a lot food in stocks? We will find you a suitable meal to cook using them.
           </h2>
         </div>
       </div>
-    </nuxt-link>
+    </div>
+    <div class="hero is-info is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            <b-icon icon="food-apple" size="is-large" />
+            Share a meal
+          </h1>
+          <h2 class="subtitle">
+            Now that you have a recipe and a meal, share it.
+          </h2>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomePage',
+  name: 'NextPage',
 }
 </script>
