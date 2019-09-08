@@ -3,6 +3,14 @@
     <section class="card">
       <div class="card-content">
         <div class="columns">
+          <b-message
+            v-if="showError"
+            title="Error"
+            type="is-danger"
+            aria-close-label="Close message"
+          >
+            Ops... Something went wrong. Please, try again later.
+          </b-message>
           <div class="column">
             <p class="help">Enter barcode manually or scan with camera</p>
             <b-field>
@@ -67,6 +75,7 @@ export default {
       date: new Date(Date.now() + 43800 * 60 * 1000),
       info: {},
       loading: false,
+      showError: false,
     }
   },
   methods: {
@@ -101,7 +110,11 @@ export default {
           updatedAt: Date.now(),
         }
         this.$store.commit('products/addProduct', newProduct)
+        // clear form
+        this.code = ''
+        this.date = new Date(Date.now() + 43800 * 60 * 1000)
       } catch (error) {
+        this.showError = true
         console.log(error)
       }
       this.loading = false
