@@ -56,7 +56,7 @@
           </div>
         </div>
         <div>
-          {{ info.name }}
+          {{ info.title }}
           <b-loading :is-full-page="false" :active.sync="loading"></b-loading>
         </div>
       </div>
