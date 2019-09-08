@@ -122,3 +122,48 @@ export const mockProducts = [
     imgSrc: 'https://www.fructo.com.ua/image/cache/catalog/fruct/avokato-1400x1400.png',
   },
 ]
+
+export const mockLeaders = [
+  {
+    id: 1,
+    name: 'Merey',
+    score: Math.floor(Math.random() * 10000),
+    imgSrc: '/profiles/Merey.jpg',
+  },
+  {
+    id: 2,
+    name: 'Olzhas',
+    score: Math.floor(Math.random() * 10000),
+    imgSrc: '/profiles/Olzhas.jpg',
+  },
+  {
+    id: 3,
+    name: 'Zharzhan',
+    score: Math.floor(Math.random() * 10000),
+    imgSrc: '/profiles/Zharzhan.jpg',
+  },
+  {
+    id: 4,
+    name: 'Marcus',
+    score: Math.floor(Math.random() * 10000),
+    imgSrc: '/profiles/Marcus.jpg',
+  },
+  {
+    id: 5,
+    name: 'Johannes',
+    score: Math.floor(Math.random() * 10000),
+    imgSrc: '/profiles/Johannes.jpg',
+  },
+  {
+    id: 6,
+    name: 'Julia',
+    score: Math.floor(Math.random() * 10000),
+    imgSrc: '/profiles/Julia.jpg',
+  },
+  {
+    id: 7,
+    name: 'Pauline',
+    score: Math.floor(Math.random() * 10000),
+    imgSrc: '/profiles/Pauline.jpg',
+  },
+]

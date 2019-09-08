@@ -42,6 +42,11 @@ export default {
           to: { name: 'play' },
         },
         {
+          title: 'Leaderboard',
+          icon: 'cards-playing-outline',
+          to: { name: 'leaderboard' },
+        },
+        {
           title: 'Map',
           icon: 'cards-playing-outline',
           to: { name: 'map' },
