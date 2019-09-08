@@ -1,5 +1,15 @@
 <template>
   <section class="container section">
+    <div>
+      <h1>Map of Charity Organizations</h1>
+      <p>In Berlin there are various organizations helping people. You can support them by:</p>
+      <ul>
+        <li>Giving food</li>
+        <li>Sorting stocks</li>
+        <li>Transfering money</li>
+        <li>Volunteering</li>
+      </ul>
+    </div>
     <div id="map-wrap" style="height: 100vh">
       <client-only>
         <l-map
@@ -45,19 +55,34 @@ export default {
       showMap: true,
       markers: [
         {
-          name: 'Berliner Tafel e.V.',
-          category: 'Food',
+          name: 'Berliner Tafel',
+          link: 'https://www.berliner-tafel.de/',
           location: latLng(52.5351036, 13.32868510000003),
         },
         {
           name: 'SIRPLUS Rettermarkt Friedrichshain',
-          category: 'Food',
+          link: 'https://sirplus.de/',
           location: latLng(52.504804, 13.445164900000009),
         },
         {
           name: 'SIRPLUS Rettermarkt Neukölln',
-          category: 'Food',
+          link: 'https://sirplus.de/',
           location: latLng(52.47884850000001, 13.437235600000008),
+        },
+        {
+          name: 'Berliner Engel für Bedürftige',
+          link: 'https://www.berlinerengel.de/',
+          location: latLng(52.541468, 13.437853399999995),
+        },
+        {
+          name: 'Berliner Stadtmission',
+          link: 'https://www.berliner-stadtmission.de',
+          location: latLng(52.5264325, 13.363480500000037),
+        },
+        {
+          name: 'Berliner Obdachlosenhilfe',
+          link: 'https://www.berliner-obdachlosenhilfe.de',
+          location: latLng(52.54070609999999, 13.360949000000005),
         },
       ],
     }
