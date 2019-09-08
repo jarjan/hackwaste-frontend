@@ -10,10 +10,8 @@
         </b-navbar-item>
       </template>
     </b-navbar>
-    <section class="main-content columns">
-      <div class="container column">
-        <nuxt />
-      </div>
+    <section class="main-content">
+      <nuxt />
     </section>
   </div>
 </template>
@@ -56,6 +54,7 @@ export default {
 
 <style lang="scss">
 $primary: #173144;
+$icon-dimensions-large: 5rem;
 @import '~bulma';
 @import '~buefy/src/scss/buefy';
 </style>

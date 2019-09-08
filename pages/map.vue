@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="container section">
     <div id="map-wrap" style="height: 100vh">
       <client-only>
         <l-map

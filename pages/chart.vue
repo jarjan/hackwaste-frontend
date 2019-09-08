@@ -1,20 +1,18 @@
 <template>
-  <section class="section">
-    <div class="columns is-vcentered">
-      <div class="column chart-container">
-        <h3 class="title is-3 has-text-centered">Overview</h3>
-        <canvas id="mainChart"></canvas>
-      </div>
-      <div class="column chart-container">
-        <h3 class="title is-3 has-text-centered">Consumed products</h3>
-        <canvas :id="`${productStatuses.consumed}Chart`"></canvas>
-      </div>
-      <div class="column chart-container">
-        <h3 class="title is-3 has-text-centered">Wasted products</h3>
-        <canvas :id="`${productStatuses.wasted}Chart`"></canvas>
-      </div>
+  <div class="container section columns is-vcentered">
+    <div class="column chart-container">
+      <h3 class="title is-3 has-text-centered">Overview</h3>
+      <canvas id="mainChart"></canvas>
     </div>
-  </section>
+    <div class="column chart-container">
+      <h3 class="title is-3 has-text-centered">Consumed products</h3>
+      <canvas :id="`${productStatuses.consumed}Chart`"></canvas>
+    </div>
+    <div class="column chart-container">
+      <h3 class="title is-3 has-text-centered">Wasted products</h3>
+      <canvas :id="`${productStatuses.wasted}Chart`"></canvas>
+    </div>
+  </div>
 </template>
 
 <script>

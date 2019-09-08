@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="container section">
     <b-table :data="products" :columns="columns"></b-table>
   </section>
 </template>

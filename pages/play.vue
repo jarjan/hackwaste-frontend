@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="container section">
     <div v-if="isTutorialVisible" class="tutorial-section" @click="hideTutorial">
       <h2 class="title is-3 has-text-centered">
         Play a game!
