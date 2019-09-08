@@ -2,11 +2,24 @@
   <section class="container section">
     <b-table :data="leaders" :default-sort="['score', 'desc']">
       <template slot-scope="props">
-        <b-table-column field="imgSrc" label="" width="80">
+        <b-table-column
+          :class="{ chosen: props.row.id === 1000 }"
+          field="imgSrc"
+          label=""
+          width="80"
+        >
           <img :src="props.row.imgSrc" class="image is-48x48" />
         </b-table-column>
-        <b-table-column field="name" label="Name">{{ props.row.name }}</b-table-column>
-        <b-table-column sortable field="score" label="Points">{{ props.row.score }}</b-table-column>
+        <b-table-column field="name" label="Name" :class="{ chosen: props.row.id === 1000 }">{{
+          props.row.name
+        }}</b-table-column>
+        <b-table-column
+          sortable
+          field="score"
+          label="Points"
+          :class="{ chosen: props.row.id === 1000 }"
+          >{{ props.row.score }}</b-table-column
+        >
       </template>
     </b-table>
   </section>
