@@ -30,4 +30,5 @@ export const ProductCategories = {
   'Gemüse​​​': { amount: 2, type: 'months' },
   'Getränke​​': { amount: 2, type: 'months' },
   Heißgetränke: { amount: 12, type: 'months' },
+  Unbekannt: { amount: 1, type: 'months' },
 }
