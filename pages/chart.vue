@@ -20,13 +20,35 @@
 <script>
 import Chart from 'chart.js'
 import { ProductStatus } from '../static/types'
+Chart.plugins.register({
+  afterDraw(chart) {
+    if (chart.data.datasets.length === 0) {
+      // No data is present
+      const ctx = chart.chart.ctx
+      const width = chart.chart.width
+      const height = chart.chart.height
+      chart.clear()
 
+      ctx.save()
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'middle'
+      ctx.font = "16px normal 'Helvetica Nueue'"
+      ctx.fillText('No data to display', width / 2, height / 2)
+      ctx.restore()
+    }
+  },
+})
 export default {
   name: 'ChartPage',
 
   data() {
-    return {}
+    return {
+      mainChart: {},
+      [`${ProductStatus.consumed}Chart`]: {},
+      [`${ProductStatus.wasted}Chart`]: {},
+    }
   },
+
   computed: {
     products() {
       return this.$store.state.products.list
@@ -36,64 +58,67 @@ export default {
     },
   },
 
+  watch: {
+    '$store.state.products.list'() {
+      this.updateCharts()
+    },
+  },
+
   mounted() {
-    this.createMainChart()
-    this.createStatusChart(ProductStatus.consumed)
-    this.createStatusChart(ProductStatus.wasted)
+    this.initCharts()
+    this.updateCharts()
   },
 
   methods: {
-    getDatasetForMain() {
-      const dataset = [0, 0, 0]
+    getDataForMain() {
+      const data = [0, 0, 0]
       this.products.map((product) => {
-        if (product.status === ProductStatus.pending) dataset[0]++
-        if (product.status === ProductStatus.wasted) dataset[1]++
-        if (product.status === ProductStatus.consumed) dataset[2]++
+        if (product.status === ProductStatus.pending) data[0]++
+        if (product.status === ProductStatus.wasted) data[1]++
+        if (product.status === ProductStatus.consumed) data[2]++
       })
-      return dataset
+      return data
     },
-    getDatasetForWasted() {
-      const dataset = [0, 0, 0]
-      this.products.map((product) => {
-        if (product.status === ProductStatus.pending) dataset[0]++
-        if (product.status === ProductStatus.wasted) dataset[1]++
-        if (product.status === ProductStatus.consumed) dataset[2]++
-      })
-      return dataset
-    },
-    getDatasetForStatus(status) {
-      const dataset = {}
+    getDataForStatus(status) {
+      const data = {}
       this.products.map((product) => {
         if (product.status === status) {
-          if (!dataset[product.category]) dataset[product.category] = 1
-          else dataset[product.category]++
+          if (!data[product.category]) data[product.category] = 1
+          else data[product.category]++
         }
       })
-      return dataset
+      return data
     },
-    createMainChart() {
-      const dataset = this.getDatasetForMain()
-      console.log('dataset: ', dataset)
-      const ctx = document.getElementById('mainChart').getContext('2d')
-      const mainChart = new Chart(ctx, {
+    initChart(chartName) {
+      const ctx = document.getElementById(`${chartName}Chart`).getContext('2d')
+      this[`${chartName}Chart`] = new Chart(ctx, {
         // The type of chart we want to create
         type: 'pie',
         // The data for our dataset
         data: {
-          labels: [ProductStatus.pending, ProductStatus.wasted, ProductStatus.consumed],
-          datasets: [
-            {
-              label: 'My First dataset',
-              backgroundColor: ['blue', 'red', 'green'],
-              borderColor: 'white',
-              data: dataset,
-            },
-          ],
+          labels: [],
+          datasets: [],
         },
         // Configuration options go here
         options: {},
       })
-      console.log(mainChart)
+    },
+    updateMainChart() {
+      this.mainChart.config.data.labels = [
+        ProductStatus.pending,
+        ProductStatus.wasted,
+        ProductStatus.consumed,
+      ]
+      const data = this.getDataForMain()
+      const mainds = {
+        label: 'Products overview',
+        backgroundColor: ['blue', 'red', 'green'],
+        borderColor: 'white',
+        data,
+      }
+
+      this.mainChart.config.data.datasets = [mainds]
+      this.mainChart.update()
     },
     dynamicColors(width) {
       const colors = []
@@ -108,36 +133,35 @@ export default {
       const b = Math.floor(Math.random() * 255)
       return 'rgb(' + r + ',' + g + ',' + b + ')'
     },
-    createStatusChart(status) {
-      const dataset = this.getDatasetForStatus(status)
+    updateStatusChart(status) {
+      const data = this.getDataForStatus(status)
       const chartCats = []
       const chartData = []
-      for (const cat in dataset) {
+      for (const cat in data) {
         chartCats.push(cat)
-        chartData.push(dataset[cat])
+        chartData.push(data[cat])
       }
       const colors = this.dynamicColors(chartCats.length)
-      console.log('colors: ', colors)
-      const ctx = document.getElementById(`${status}Chart`).getContext('2d')
-      const chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'pie',
-        // The data for our dataset
-        data: {
-          labels: chartCats,
-          datasets: [
-            {
-              label: 'My First dataset',
-              backgroundColor: colors,
-              borderColor: 'white',
-              data: chartData,
-            },
-          ],
-        },
-        // Configuration options go here
-        options: {},
-      })
-      console.log(chart)
+      this[`${status}Chart`].config.data.labels = [...chartCats]
+      const mainds = {
+        label: `Chart for ${status} products`,
+        backgroundColor: colors,
+        borderColor: 'white',
+        data: chartData,
+      }
+
+      this[`${status}Chart`].config.data.datasets = [mainds]
+      this[`${status}Chart`].update()
+    },
+    initCharts() {
+      this.initChart('main')
+      this.initChart(ProductStatus.consumed)
+      this.initChart(ProductStatus.wasted)
+    },
+    updateCharts() {
+      this.updateMainChart()
+      this.updateStatusChart(ProductStatus.consumed)
+      this.updateStatusChart(ProductStatus.wasted)
     },
   },
 }
