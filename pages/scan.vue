@@ -11,6 +11,14 @@
           >
             Ops... Something went wrong. Please, try again later.
           </b-message>
+          <b-message
+            v-if="showSuccess"
+            title="Success"
+            type="is-success"
+            aria-close-label="Close message"
+          >
+            New product has been added!
+          </b-message>
           <div class="column">
             <p class="help">Scan barcode with camera or type manually</p>
             <div class="columns">
@@ -49,7 +57,7 @@
         </div>
       </div>
       <footer class="card-footer">
-        <button class="button is-primary is-fullwidth" @click="addProduct">
+        <button v-if="info.ean" class="button is-primary is-fullwidth" @click="addProduct">
           Add product
         </button>
       </footer>
@@ -85,6 +93,7 @@ export default {
       info: {},
       loading: false,
       showError: false,
+      showSuccess: false,
     }
   },
   methods: {
@@ -94,6 +103,7 @@ export default {
       this.getProductInfo()
     },
     async getProductInfo() {
+      this.showSuccess = false
       this.loading = true
       let info
       try {
@@ -126,6 +136,9 @@ export default {
         // clear form
         this.code = ''
         this.date = new Date(Date.now() + 43800 * 60 * 1000)
+        this.info = {}
+        // show message
+        this.showSuccess = true
       } catch (error) {
         this.showError = true
         console.log(error)
