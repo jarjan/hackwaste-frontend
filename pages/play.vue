@@ -27,11 +27,11 @@
     </div>
 
     <h1 class="score is-1 has-text-centered">
-      Score:
+      Current Score:
       <ICountUp :delay="delay" :end-val="visiblePoints" :options="options" />
     </h1>
-    <p class="score-phrase has-text-centered">{{ phrase }}</p>
-    <div class="columns is-vcentered">
+    <p class="score-phrase has-text-centered" v-if="visibleCards.length > 0">{{ phrase }}</p>
+    <div class="columns is-vcentered" v-if="visibleCards.length > 0">
       <div class="column">
         <div class="level">
           <div class="level-item">
@@ -46,6 +46,9 @@
         </div>
       </div>
     </div>
+    <h3 class="title is-3 has-text-centered" v-if="visibleCards.length === 0">
+      All products have been processed, well done!
+    </h3>
   </section>
 </template>
 
@@ -94,8 +97,7 @@ export default {
   },
 
   watch: {
-    '$store.state.game.points'(v) {
-      console.log('v: ', v)
+    '$store.state.game.points'() {
       this.handlePointsChanged()
     },
   },
@@ -144,8 +146,6 @@ export default {
         pointsNum = this.points * -1
       }
 
-      console.log('Phrases: ', Phrases)
-      console.log('Points: ', pointsNum)
       for (const key in Phrases) {
         if (pointsNum < parseInt(key)) {
           phrase = Phrases[prevKey]
