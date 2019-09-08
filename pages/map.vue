@@ -1,15 +1,5 @@
 <template>
   <section class="container section">
-    <div>
-      <h1>Map of Charity Organizations</h1>
-      <p>In Berlin there are various organizations helping people. You can support them by:</p>
-      <ul>
-        <li>Giving food</li>
-        <li>Sorting stocks</li>
-        <li>Transfering money</li>
-        <li>Volunteering</li>
-      </ul>
-    </div>
     <div id="map-wrap" style="height: 100vh">
       <client-only>
         <l-map
