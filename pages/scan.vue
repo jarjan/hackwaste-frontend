@@ -12,15 +12,24 @@
             Ops... Something went wrong. Please, try again later.
           </b-message>
           <div class="column">
-            <p class="help">Enter barcode manually or scan with camera</p>
-            <b-field>
-              <b-input v-model="code" placeholder="Barcode..." icon="barcode"></b-input>
-              <p class="control">
-                <button class="button" @click="showScanner = !showScanner">
-                  Open camera
-                </button>
-              </p>
-            </b-field>
+            <p class="help">Scan barcode with camera or type manually</p>
+            <div class="columns">
+              <div class="column">
+                <b-button icon-left="camera" @click="showScanner = !showScanner">
+                  Scan
+                </b-button>
+              </div>
+              <div class="column">
+                <b-field>
+                  <b-input v-model="code" placeholder="Barcode..." icon="barcode"></b-input>
+                  <p class="control">
+                    <button class="button" @click="getProductInfo">
+                      Search
+                    </button>
+                  </p>
+                </b-field>
+              </div>
+            </div>
           </div>
           <div class="column">
             <p class="help">Select a best before date</p>
@@ -79,13 +88,16 @@ export default {
     }
   },
   methods: {
-    async handleSelectCode(code) {
+    handleSelectCode(code) {
       this.code = code
       this.showScanner = false
+      this.getProductInfo()
+    },
+    async getProductInfo() {
       this.loading = true
       let info
       try {
-        info = await this.$axios.$get(api + code)
+        info = await this.$axios.$get(api + this.code)
       } catch (error) {
         console.log(error)
       }
@@ -103,7 +115,7 @@ export default {
           ean: this.info.ean,
           category: this.info.category,
           imgSrc: this.info.imgSrc,
-          title: this.info.title,
+          title: this.info.title ? this.info.title : 'Undefined',
           wasteDate,
           bestBeforeDate,
           status: ProductStatus.pending,
