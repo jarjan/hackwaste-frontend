@@ -17,22 +17,39 @@ import { mockLeaders } from '~/static/__mocks__'
 
 export default {
   name: 'ProductsPage',
+  data() {
+    return {
+      leaders: [],
+    }
+  },
   computed: {
-    leaders() {
-      return mockLeaders
-    },
     person() {
-      const person = {
-        id: Date.now(),
-        name: 'Big brother',
-        score: this.$store.state.game.points,
-        imgSrc: '/profiles/user.png',
-      }
+      const score = this.$store.state.game.points
+      const person = this.createPerson(score)
       return person
     },
   },
+  watch: {
+    '$store.state.game.points'(score) {
+      const person = this.createPerson(score)
+      this.updateLeaderboard(person)
+    },
+  },
   mounted() {
-    console.log(this.leaders)
+    this.leaders = [...mockLeaders, this.person]
+  },
+  methods: {
+    createPerson(score) {
+      return {
+        id: 1000,
+        name: 'Big Brother',
+        score,
+        imgSrc: '/profiles/user.png',
+      }
+    },
+    updateLeaderboard(person) {
+      this.leaders = [...this.leaders, person]
+    },
   },
 }
 </script>
