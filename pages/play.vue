@@ -30,8 +30,8 @@
       Current Score:
       <ICountUp :delay="delay" :end-val="visiblePoints" :options="options" />
     </h1>
-    <p class="score-phrase has-text-centered" v-if="visibleCards.length > 0">{{ phrase }}</p>
-    <div class="columns is-vcentered" v-if="visibleCards.length > 0">
+    <p v-if="visibleCards.length > 0" class="score-phrase has-text-centered">{{ phrase }}</p>
+    <div v-if="visibleCards.length > 0" class="columns is-vcentered">
       <div class="column">
         <div class="level">
           <div class="level-item">
@@ -46,7 +46,7 @@
         </div>
       </div>
     </div>
-    <h3 class="title is-3 has-text-centered" v-if="visibleCards.length === 0">
+    <h3 v-if="visibleCards.length === 0" class="title is-3 has-text-centered">
       All products have been processed, well done!
     </h3>
   </section>
