@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="hero is-info is-bold">
+    <nuxt-link :to="{ name: 'scan' }" class="hero is-info is-bold">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
@@ -12,21 +12,8 @@
           </h2>
         </div>
       </div>
-    </section>
-    <section class="hero is-primary is-bold">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            <b-icon icon="plus-circle-outline" size="is-large" />
-            Add
-          </h1>
-          <h2 class="subtitle">
-            Add products to your stock.
-          </h2>
-        </div>
-      </div>
-    </section>
-    <section class="hero is-success is-bold">
+    </nuxt-link>
+    <nuxt-link :to="{ name: 'play' }" class="hero is-success is-bold">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
@@ -38,8 +25,21 @@
           </h2>
         </div>
       </div>
-    </section>
-    <section class="hero is-danger is-bold">
+    </nuxt-link>
+    <nuxt-link :to="{ name: 'map' }" class="hero is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            <b-icon icon="plus-circle-outline" size="is-large" />
+            Help
+          </h1>
+          <h2 class="subtitle">
+            Find nearby charity and food-saving organizations.
+          </h2>
+        </div>
+      </div>
+    </nuxt-link>
+    <nuxt-link :to="{ name: 'leaderboard' }" class="hero is-danger is-bold">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
@@ -51,7 +51,7 @@
           </h2>
         </div>
       </div>
-    </section>
+    </nuxt-link>
   </div>
 </template>
 
