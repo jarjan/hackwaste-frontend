@@ -51,6 +51,11 @@ export default {
           icon: 'cards-playing-outline',
           to: { name: 'map' },
         },
+        {
+          title: "What's Next?",
+          icon: 'cards-playing-outline',
+          to: { name: 'next' },
+        },
       ],
     }
   },
