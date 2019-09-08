@@ -26,9 +26,9 @@
       </p>
     </div>
 
-    <h1 class="score is-1 has-text-centered">
+    <h1 class="score is-4 has-text-centered">
       Current Score:
-      <ICountUp :delay="delay" :end-val="visiblePoints" :options="options" />
+      <strong><ICountUp :delay="delay" :end-val="visiblePoints" :options="options"/></strong>
     </h1>
     <p v-if="visibleCards.length > 0" class="score-phrase has-text-centered">{{ phrase }}</p>
     <div v-if="visibleCards.length > 0" class="columns is-vcentered">
