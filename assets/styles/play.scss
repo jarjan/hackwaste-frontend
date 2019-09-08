@@ -32,3 +32,9 @@
   font-size: 3rem;
   line-height: 3rem;
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}

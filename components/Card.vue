@@ -10,6 +10,7 @@
     :style="{ transform: transformString }"
   >
     <h3 class="cardTitle">{{ card.title }}</h3>
+    <img v-if="card.imgSrc" class="cardImg" :src="card.imgSrc" />
   </div>
 </template>
 

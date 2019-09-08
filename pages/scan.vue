@@ -110,11 +110,12 @@ export default {
         const wasteDate = calculateWasteDate(this.info.category, this.date)
         const bestBeforeDate = formatMoment(this.date)
         const productId = uuid()
+        const defImg = 'https://cabuchon.pe/themes/cabuchon/assets/img/nophoto.jpg'
         const newProduct = {
           id: productId,
           ean: this.info.ean,
           category: this.info.category,
-          imgSrc: this.info.imgSrc,
+          imgSrc: this.info.imgSrc ? this.info.imgSrc : defImg,
           title: this.info.title ? this.info.title : 'Undefined',
           wasteDate,
           bestBeforeDate,
