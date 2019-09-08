@@ -34,8 +34,8 @@ export default {
     return {
       zoom: 12,
       center: latLng(52.520008, 13.404954),
-      url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      url: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
+      attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
       currentZoom: 11.5,
       currentCenter: latLng(52.520008, 13.404954),
       showParagraph: false,
