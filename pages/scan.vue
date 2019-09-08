@@ -23,7 +23,11 @@
             <p class="help">Scan barcode with camera or type manually</p>
             <div class="columns">
               <div class="column">
-                <b-button icon-left="camera" @click="showScanner = !showScanner">
+                <b-button
+                  class="is-fullwidth"
+                  icon-left="camera"
+                  @click="showScanner = !showScanner"
+                >
                   Scan
                 </b-button>
               </div>
